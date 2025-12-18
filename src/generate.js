@@ -1,4 +1,3 @@
-import { createHmac } from "node:crypto";
 
 // var domain = new Uint8Array(1);
 // hmac_name = "sha256"
@@ -23,12 +22,7 @@ export default (id, key, message, hmac, hmac_name, domain, min) => {
                 .digest()
             )
         )
-        .copy(
-            id,
-            i,
-            0,
-            (take = min(block.length, (l - i)))
-        );
+        .copy(id,i,0,(take = min(block.length, (l - i))));
 
         i += take;
     }

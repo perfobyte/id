@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/generate.js"],
+  "sourcesContent": ["\n// var domain = new Uint8Array(1);\n// hmac_name = \"sha256\"\n\nexport default (id, key, message, hmac, hmac_name, domain, min) => {\n    var\n        l = id.byteLength,\n        i = 0,\n        ctr = 0,\n        take = 0,\n        block = null\n    ;\n\n    while (i < l) {\n        domain[0] = (ctr++ & 0xff);\n\n        (\n            block = (\n                hmac(hmac_name, key)\n                .update(message)\n                .update(domain)\n                .digest()\n            )\n        )\n        .copy(id,i,0,(take = min(block.length, (l - i))));\n\n        i += take;\n    }\n\n    return id;\n}\n"],
+  "mappings": "AAIA,IAAOA,EAAQ,CAACC,EAAIC,EAAKC,EAASC,EAAMC,EAAWC,EAAQC,IAAQ,CAS/D,QAPI,EAAIN,EAAG,WACPO,EAAI,EACJC,EAAM,EACNC,EAAO,EACPC,EAAQ,KAGLH,EAAI,GACPF,EAAO,CAAC,EAAKG,IAAQ,KAGjBE,EACIP,EAAKC,EAAWH,CAAG,EAClB,OAAOC,CAAO,EACd,OAAOG,CAAM,EACb,OAAO,GAGf,KAAKL,EAAGO,EAAE,EAAGE,EAAOH,EAAII,EAAM,OAAS,EAAIH,CAAE,CAAE,EAEhDA,GAAKE,EAGT,OAAOT,CACX",
+  "names": ["generate_default", "id", "key", "message", "hmac", "hmac_name", "domain", "min", "i", "ctr", "take", "block"]
+}
