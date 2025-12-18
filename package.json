@@ -1,0 +1,17 @@
+{
+  "name": "@perfobyte/id",
+  "version": "1.0.0",
+  "description": "Simple ID manipulation and generation",
+  "homepage": "https://github.com/perfobyte/id#readme",
+  "bugs": {
+    "url": "https://github.com/perfobyte/id/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfobyte/id.git"
+  },
+  "license": "MIT",
+  "author": "perfobyte",
+  "type": "commonjs",
+  "main": "1.js"
+}
